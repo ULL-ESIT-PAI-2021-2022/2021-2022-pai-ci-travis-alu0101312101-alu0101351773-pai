@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "test ./test/*.spec.js",
-    "cov": "jsdoc ./jutge/*.js -d ./docs"
+    "cov": "jsdoc ./src/*.js -d ./docs"
   },
   "repository": {
     "type": "git",
