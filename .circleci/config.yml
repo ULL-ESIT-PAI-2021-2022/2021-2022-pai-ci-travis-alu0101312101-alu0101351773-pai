@@ -9,11 +9,8 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run cov
-      - run: echo "my artifact" > artifact.txt
-      - store_test_results:
-          path: docs
       - store_artifacts:
-          path: artifact.txt
+          path: docs
           
 workflows:
   version: 2
