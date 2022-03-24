@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: npm i
       - run: npm run test
-      - store_artifacts:
+      - store_test_results:
           path: result
 
   coverage:
@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run: npm i
       - run: npm run cov
-      - store_test_results:
+      - store_artifacts:
           path: docs
 
 
