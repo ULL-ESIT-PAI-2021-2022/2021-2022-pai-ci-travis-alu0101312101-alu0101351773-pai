@@ -10,6 +10,8 @@ jobs:
       - checkout
       - run: ls
       - run: npm install
+      - persist_to_workspace:
+          root: workspace
 
   tests:
     docker:
@@ -18,9 +20,12 @@ jobs:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
     steps:
+      - checkout
       - run: npm run test
       - store_artifacts:
           path: docs
+      - persist_to_workspace:
+          root: workspace
 
   coverage:
     docker:
@@ -29,9 +34,12 @@ jobs:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
     steps:
+      - checkout
       - run: npm run cov
       - store_test_results:
           path: results
+      - persist_to_workspace:
+          root: workspace
           
 workflows:
   version: 2
