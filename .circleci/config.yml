@@ -4,11 +4,13 @@ orbs:
 
 jobs:
   codecov:
-    executor:
-      name: node/default
-      tag: '16'
+    executor: node/default
     steps:
       - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run: sudo npm install -g npm@latest
       - run: npm run test
       - run: curl -Os https://uploader.codecov.io/latest/linux/codecov
       - run: chmod +x codecov
