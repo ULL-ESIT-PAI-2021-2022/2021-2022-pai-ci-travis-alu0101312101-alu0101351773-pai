@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "test ./test/*.spec.js"
+    "cov": "jsdoc ./jutge/*.js -d ./docs"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/ULL-ESIT-PAI-2021-2022/2021-2022-pai-ci-travis-alu0101312101-alu0101351773-pai#readme",
   "dependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "jsdoc": "^3.6.10"
   }
 }
