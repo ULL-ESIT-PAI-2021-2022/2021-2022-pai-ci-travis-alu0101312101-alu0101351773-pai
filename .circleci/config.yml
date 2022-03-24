@@ -21,7 +21,6 @@ jobs:
             password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run: npm i
       - run: npm run cov
       - store_artifacts:
           path: docs
@@ -33,4 +32,7 @@ workflows:
   build_and_artifacts:
     jobs:
       - tests
-      - coverage
+      - coverage:
+          requires:
+            - tests
+          context: org-global
