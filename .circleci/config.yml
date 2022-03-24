@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: npm run test
       - store_artifacts:
-        path: docs
+          path: docs
 
   coverage:
     docker:
@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run: npm run cov
       - store_test_results:
-        - path: results
+          path: results
           
 workflows:
   version: 2
