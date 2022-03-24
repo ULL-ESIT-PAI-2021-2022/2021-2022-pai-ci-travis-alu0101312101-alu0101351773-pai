@@ -11,7 +11,7 @@ jobs:
       - run: ls
       - run: npm install
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths: 
             - .
 
@@ -27,7 +27,7 @@ jobs:
       - store_artifacts:
           path: docs
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths: 
             - .
 
@@ -43,7 +43,7 @@ jobs:
       - store_test_results:
           path: results
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths: 
             - .
           
