@@ -12,6 +12,8 @@ jobs:
       - run: npm install
       - persist_to_workspace:
           root: workspace
+          paths: 
+            - .
 
   tests:
     docker:
@@ -26,6 +28,8 @@ jobs:
           path: docs
       - persist_to_workspace:
           root: workspace
+          paths: 
+            - .
 
   coverage:
     docker:
@@ -40,6 +44,8 @@ jobs:
           path: results
       - persist_to_workspace:
           root: workspace
+          paths: 
+            - .
           
 workflows:
   version: 2
