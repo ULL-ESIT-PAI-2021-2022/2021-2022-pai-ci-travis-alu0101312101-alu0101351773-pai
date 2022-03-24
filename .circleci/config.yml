@@ -18,7 +18,7 @@ jobs:
       - run: echo "Im test2"
   test3:
     docker:
-      - image: cimg/
+      - image: cimg/base:2022.03
     steps:
       - run: echo "Im test3"
 
