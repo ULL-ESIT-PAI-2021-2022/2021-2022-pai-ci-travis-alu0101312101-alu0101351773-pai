@@ -6,7 +6,7 @@ jobs:
   codecov:
     executor:
       name: node/default
-      tag: '17'
+      tag: '16'
     steps:
       - checkout
       - run: npm run test
