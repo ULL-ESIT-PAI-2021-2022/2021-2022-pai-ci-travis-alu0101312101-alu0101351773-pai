@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "test ./test/*.spec.js"
+    "test": "test ./test/*.spec.js",
     "cov": "jsdoc ./jutge/*.js -d ./docs"
   },
   "repository": {
