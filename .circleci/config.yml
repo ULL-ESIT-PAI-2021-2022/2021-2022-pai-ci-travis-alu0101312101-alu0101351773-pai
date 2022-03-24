@@ -1,11 +1,8 @@
 version: 2.1
-orbs:
-  node: circleci/node@5.0.1
 jobs:
   build:
-    executor:
-      name: node/default
-      tag: '17'
+    docker:
+        - image: cimg/node:17.7.2
     steps:
       - checkout
       - run: npm install
