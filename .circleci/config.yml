@@ -13,8 +13,7 @@ jobs:
       - save_cache:
           key: my-cache
           paths:
-            - my-file.txt
-            - my-project/my-dependencies-directory
+            - .
 
   tests:
     docker:
@@ -30,6 +29,7 @@ jobs:
       - restore_cache:
           keys:
             - my-cache
+          
 
 
   coverage:
