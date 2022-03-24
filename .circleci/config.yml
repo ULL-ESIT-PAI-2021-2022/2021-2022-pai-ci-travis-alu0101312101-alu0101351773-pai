@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:17.7.2
+        - image: cimg/node:17.7.2
     steps:
       - checkout
       - run: ls
@@ -10,7 +10,7 @@ jobs:
 
   tests:
     docker:
-      - image: cimg/node:17.7.2
+        - image: cimg/node:17.7.2
     steps:
       - checkout
       - run: npm run test
@@ -19,7 +19,7 @@ jobs:
 
   coverage:
     docker:
-      - image: cimg/node:17.7.2
+        - image: cimg/node:17.7.2
     steps:
       - checkout
       - run: npm run cov
