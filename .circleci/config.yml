@@ -18,7 +18,6 @@ jobs:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
     steps:
-      - checkout
       - run: npm run test
       - store_artifacts:
           path: docs
@@ -30,7 +29,6 @@ jobs:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
     steps:
-      - checkout
       - run: npm run cov
       - store_test_results:
           path: results
