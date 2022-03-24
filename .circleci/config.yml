@@ -14,7 +14,7 @@ jobs:
       - run: npm run test
       - run: curl -Os https://uploader.codecov.io/latest/linux/codecov
       - run: chmod +x codecov
-      - run: ./codecov -t 33fe3508-5788-4099-a5ca-44bad445a5e3
+      - run: ./codecov
 
 workflows:
   upload-to-codecov:
