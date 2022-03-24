@@ -5,6 +5,7 @@ jobs:
         - image: cimg/node:17.7.2
     steps:
       - checkout
+      - run: ls
       - run: npm install
       - run: npm run test
       - run: npm run cov
