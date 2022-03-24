@@ -11,7 +11,7 @@ jobs:
       - run: ls
       - run: npm install
       - save_cache:
-          key: my-cache
+          key: v1-npm-cache
           paths:
             - .
 
