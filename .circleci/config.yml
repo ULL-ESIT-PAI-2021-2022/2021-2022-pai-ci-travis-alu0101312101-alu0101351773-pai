@@ -11,7 +11,7 @@ jobs:
       - run: npm i
       - run: npm run test
       - store_artifacts:
-          path: docs
+          path: result
 
   coverage:
     docker:
@@ -21,10 +21,10 @@ jobs:
             password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run: npm run cov
       - run: npm i
+      - run: npm run cov
       - store_test_results:
-          path: results
+          path: docs
 
 
           
