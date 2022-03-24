@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "test ./test/*.spec.js",
+    "test": "jest ./tests/*",
     "cov": "jsdoc ./src/*.js -d ./docs"
   },
   "repository": {
@@ -23,5 +23,14 @@
   "dependencies": {
     "jest": "^27.5.1",
     "jsdoc": "^3.6.10"
+  },
+  "devDependencies": {
+    "jest-junit": "^13.0.0"
+  },
+  "jest" : {
+    "reporters": [ "default", "jest-junit" ]
+  },
+  "jest-junit": {
+    "outputDirectory": "./result/"
   }
 }

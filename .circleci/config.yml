@@ -2,18 +2,38 @@ version: 2.1
 jobs:
   build:
     docker:
-        - image: cimg/node:17.7.2
+      - image: cimg/node:17.7.2
     steps:
       - checkout
       - run: ls
       - run: npm install
+
+  tests:
+    docker:
+      - image: cimg/node:17.7.2
+    steps:
+      - checkout
       - run: npm run test
+    - store_artifacts:
+      path: docs
+
+  coverage:
+    docker:
+      - image: cimg/node:17.7.2
+    steps:
+      - checkout
       - run: npm run cov
-      - store_artifacts:
-          path: docs
+    - store_test_results:
+      - path: results
           
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
+      - tests:
+        - requires:
+          build
+      - coverage:
+        - requires:
+          tests
