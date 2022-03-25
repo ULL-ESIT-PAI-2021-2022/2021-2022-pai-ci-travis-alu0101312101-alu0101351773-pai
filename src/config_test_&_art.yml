@@ -1,0 +1,39 @@
+version: 2.1
+jobs:
+  tests:
+    docker:
+        - image: cimg/node:17.7.2
+          auth:
+            username: mydockerhub-user
+            password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run: npm i
+      - run: npm run test
+      - store_test_results:
+          path: result
+
+  coverage:
+    docker:
+        - image: cimg/node:17.7.2
+          auth:
+            username: mydockerhub-user
+            password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run: npm i
+      - run: npm run cov
+      - store_artifacts:
+          path: docs
+
+
+          
+workflows:
+  version: 2
+  build_and_artifacts:
+    jobs:
+      - tests
+      - coverage
+  test_only:
+    jobs:
+      - tests

@@ -1,0 +1,38 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2022.03
+    steps:
+      - run: echo "Im build"
+  test1:
+    docker:
+      - image: cimg/base:2022.03
+    steps:
+      - run: echo "Im test1"
+  test2:
+    docker:
+      - image: cimg/base:2022.03
+    steps:
+      - run: echo "Im test2"
+  test3:
+    docker:
+      - image: cimg/base:2022.03
+    steps:
+      - run: echo "Im test3"
+
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build
+      - test1:
+          requires:
+            - build
+      - test2:
+          requires:
+            - test3
+      - test3:
+          requires:
+            - test1
