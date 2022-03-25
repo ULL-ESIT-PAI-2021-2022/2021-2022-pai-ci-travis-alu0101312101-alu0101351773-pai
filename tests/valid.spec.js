@@ -2,7 +2,7 @@ const valid = require('../src/valid_dates');
 
 describe('Valid Year test', () => {
   test('Good Years', () => {
-    expect(valid.validYear(1900)).toEqual(false);
+    expect(valid.validYear(1900)).toEqual(true);
     expect(valid.validYear(1963)).toEqual(true);
     expect(valid.validYear(2001)).toEqual(true);
     expect(valid.validYear(9382)).toEqual(true);
